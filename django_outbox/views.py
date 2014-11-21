@@ -1,15 +1,14 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 from .outbox import Outbox
 
 
-class OutboxTemplateView(TemplateView):
+class OutboxListView(ListView):
     template_name = 'django_outbox/outbox.html'
+    context_object_name = 'mails'
 
-    def get_context_data(self, **kwargs):
-        context = super(OutboxTemplateView, self).get_context_data(**kwargs)
-        context['mails'] = Outbox().all()
-        return context
+    def get_queryset(self):
+        return sorted(Outbox().all(), key=lambda r: r.when)
 
 
 class MailTemplateView(TemplateView):
