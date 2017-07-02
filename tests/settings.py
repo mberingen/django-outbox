@@ -1,9 +1,9 @@
 from os.path import join, dirname, abspath
 
-here = lambda *paths: join(dirname(abspath(__file__)), *paths)                          
-                                                                                        
-PROJECT_ROOT = here('..')                                                               
-                                                                                        
+here = lambda *paths: join(dirname(abspath(__file__)), *paths)
+
+PROJECT_ROOT = here('..')
+
 root = lambda *paths: join(PROJECT_ROOT, *paths)
 
 DEBUG = True
@@ -116,11 +116,13 @@ ROOT_URLCONF = 'tests.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'tests.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+TEMPLATES = {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            '/Users/marc/Public/django-outbox/django_outbox',
+        ],
+        'APP_DIRS': True,
+    },
 
 INSTALLED_APPS = (
     'django.contrib.auth',

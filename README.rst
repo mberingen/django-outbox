@@ -40,9 +40,9 @@ Add the django outbox url to your urls.py:
   # This will prevent from showing the outbox in production. The outbox
   # will only be available when the DEBUG setting is true.
   if settings.DEBUG:
-    urlpatterns += patterns('',
+    urlpatterns += [
         url(r'^outbox/', include('django_outbox.urls')),
-    ) 
+    ]
 
 Now just run your application in **debug** mode and access */outbox*. All should be working!
 
