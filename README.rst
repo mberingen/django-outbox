@@ -52,7 +52,7 @@ Contributing
 This project use pytest_. To run the tests just type:
 
 .. code-block:: bash
-  
-  $ py.test
+
+  $ python -m pytest tests/
 
 .. _pytest: http://pytest.org/
