@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "django-outbox"
+version = "0.1.0"
+description = ""
+authors = ["Marc Beringen <mberingen@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Django = "*"
+
+[tool.poetry.dev-dependencies]
+expecter = "*"
+mock = "*"
+pytest-django = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
