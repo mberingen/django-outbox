@@ -118,9 +118,7 @@ WSGI_APPLICATION = 'tests.wsgi.application'
 
 TEMPLATES = {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            '/Users/marc/Public/django-outbox/django_outbox',
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
     },
 
